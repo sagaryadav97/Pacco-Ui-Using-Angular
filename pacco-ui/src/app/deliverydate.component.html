@@ -1,0 +1,70 @@
+<div *ngIf="deliveryinfostatus">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>set the desired delivery date</h2>
+                <label>Select Date</label>
+                <select class="browser-default" name="dates" #dates>
+                    <option>2020-01-10</option>
+                    <option>2020-07-01</option>
+                    <option>2020-07-02</option>
+                    <option>2020-07-03</option>
+                </select>
+                <button class="btn btn-primary"  (click)="deliverydate(dates.value)">Update Date</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="deliveryinfostatusget">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Delivery date Is set</h2>
+                <h2>Make a Reservation</h2>
+                <label>Select Priority</label>
+                <select class="browser-default" name="priority" #priority>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <button class="btn btn-primary"  (click)="priorityupdate(priority.value)" >Update Date</button>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+<div *ngIf="deliveryinfoget">
+    <div class="col-lg-8 offset-lg-4">
+        <div class="card" style="width: 40rem;">
+            <h1>Priority is Set</h1>
+            <div class="card-header">
+                Resource Details
+            </div>
+            <div *ngFor="let parcel of deliveryinfodetials">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><label>parcels Id:-</label> {{parcel.id}}</li>
+                    <div class="card-header">
+                        Tags Details
+                    </div>
+                    <div *ngFor="let tag of tags">
+                        <li class="list-group-item"><label>vehicle Details :-</label> {{tag.vehicle}}</li>
+                        <li class="list-group-item"><label>armor Details:-</label> {{tag.armor}}</li>
+                    </div>
+                    <div class="card-header">
+                        Reservations Details
+                    </div>
+                    <div *ngFor="let res of reservations">
+                        <li class="list-group-item"><label>DateTime:-</label> {{res.dateTime}}</li>
+                        <li class="list-group-item"><label>Priority:-</label> {{res.priority}}</li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card text-center">
+        <button class="btn btn-primary" routerLink='/deliveryinfo'>Click to Start the delivery</button>
+    </div>
+</div>

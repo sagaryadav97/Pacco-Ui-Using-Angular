@@ -1,0 +1,77 @@
+<div *ngIf="pstatus">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h1>Add The Parcel Details</h1>
+                <form #parcelsForm="ngForm" (ngSubmit)="parcels(parcelsForm)">
+                <label>Variant:</label>
+                <select class="browser-default" name="variant" #variant = "ngModel" [(ngModel)] = "user.variant">
+                    <option>weapon</option>
+                    <option>weapon 2</option>
+                    <option>weapon 3</option>
+                </select><br>
+                <label>Size:</label>
+                <select class="browser-default" name="size" #size = "ngModel" [(ngModel)] = "user.size">
+                    <option>large</option>
+                    <option>medium</option>
+                    <option>small</option>
+                </select><br>
+                <label>Name:</label>
+                <select class="browser-default" name="name" #name = "ngModel" [(ngModel)] = "user.name">
+                    <option>Parcel #1</option>
+                    <option>Parcel #2</option>
+                    <option>Parcel #3</option>
+                </select><br>
+                <label>Description:</label>
+                <select class="browser-default" name="description" #description = "ngModel" [(ngModel)] = "user.description">
+                    <option>My parcel #1</option>
+                    <option>My parcel #2</option>
+                    <option>My parcel #3</option>
+                </select>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="pstatusget">
+    <button class="btn btn-primary" (click)="parcelget()">Click to View Parcel Details</button>
+    <div *ngIf="parceldetialstatus">
+        <div class="col-lg-8 offset-lg-4">
+            <div class="card" style="width: 40rem;">
+                <div class="card-header">
+                Parcel Details Details  
+                </div>
+                <div *ngFor="let parcel of parceldetials">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><label>parcels Id:-</label> {{parcel.id}}</li>
+                        <li class="list-group-item"><label>customerId:-</label> {{parcel.customerId}}</li>
+                        <li class="list-group-item"><label>variant:-</label> {{parcel.variant}}</li>
+                        <li class="list-group-item"><label>size:-</label> {{parcel.size}}</li>
+                        <li class="list-group-item"><label>name:-</label> {{parcel.name}}</li>
+                        <li class="list-group-item"><label>description:-</label> {{parcel.description}}</li>
+                        <li class="list-group-item"><label>createdAt:-</label> {{parcel.createdAt}}</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <div class="card text-center">
+                <button  class="btn btn-primary" (click)="volume()">Click to Check the Volume Of Parcel</button>
+            </div>
+    </div>
+</div>
+
+
+
+
+<div *ngIf="pstatusgetvolume">
+    <div class="card  text-center" style="width: 18rem;">
+        <h3>Volume Details </h3>
+        <label>Volume:-</label>{{parceldetials.volume }}<br>
+    </div>
+    <div class="card text-center">
+        <button class="btn btn-primary" routerLink='/order'>Click to Create Order</button>
+    </div>
+</div>

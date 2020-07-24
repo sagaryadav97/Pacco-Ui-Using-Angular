@@ -1,0 +1,6 @@
+2020/07/22-10:55:19.072 32e5 Reusing MANIFEST /home/hp/pacco-ui/pacco-ui/c:mydata/Default/Local Storage/leveldb/MANIFEST-000001
+2020/07/22-10:55:19.073 32e5 Recovering log #3
+2020/07/22-10:55:19.261 32e5 Reusing old log /home/hp/pacco-ui/pacco-ui/c:mydata/Default/Local Storage/leveldb/000003.log 
+2020/07/22-11:18:45.716 3fee Level-0 table #5: started
+2020/07/22-11:18:45.862 3fee Level-0 table #5: 12683 bytes OK
+2020/07/22-11:18:45.979 3fee Delete type=0 #3

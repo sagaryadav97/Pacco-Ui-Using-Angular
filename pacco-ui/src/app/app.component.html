@@ -1,0 +1,47 @@
+
+<div *ngIf="token != null">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Welcome to Pacco UI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" role="button" >Orders</a>
+        </li>
+ 
+      </ul>
+
+      <span class="navbar-item">
+        <a  role="button" (click)="logout()">Logout</a>
+      </span>
+    </div>
+  </nav>
+
+</div>
+
+
+<div *ngIf="token == null">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Welcome to Pacco UI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+
+
+ 
+      </ul>
+    </div>
+  </nav>
+    <app-users></app-users>
+</div>
+
+
+<router-outlet></router-outlet>
+

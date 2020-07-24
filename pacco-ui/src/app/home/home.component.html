@@ -1,0 +1,61 @@
+
+<div *ngIf="userdet">
+    <div class="col-lg-8 offset-lg-4">
+        <div class="card" style="width: 30rem;">
+          <div class="card-header">
+          User Details  
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><label>User Id:-</label> {{users.id}}</li>
+            <li class="list-group-item"><label>Email Id:-</label> {{users.email}}</li>
+            <li class="list-group-item"><label>Role:-</label> {{users.role}}</li>
+            <li class="list-group-item"><label>CreatedAt:-</label> {{users.createdAt}}</li>
+          </ul>
+        </div>
+      </div>
+</div>
+<br>
+
+<div class="card text-center">
+    <div class="card-body">
+        <button class="btn btn-primary" (click)="Userdetails()">Get Details</button>
+    </div>
+</div>
+
+
+<div *ngIf="orderstatus">
+    <div class="card text-center">
+        <div class="card-body">
+            <h5 class="card-title">Welcome Start To Order Now</h5>
+            <button class="btn btn-primary" (click)="order()">Order</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div *ngIf="addressstatus">
+    <div class="col-lg-8 offset-lg-4">
+        <div class="card mb-3" style="max-width: 600px;">
+            <div class="row justify-content-center">
+            <div class="row no-gutters">
+                <br>
+                <form class="col-lg-6 offset-lg-3" #userForm="ngForm"  (ngSubmit)="adddaddress(userForm)">
+                    <h3>Enter the Details To Complete Registeration</h3>
+                        <label>Enter Your Ful Name</label>
+                        <input type="text" name="sname" #sname="ngModel" [(ngModel)]="user.sname"/><br>
+                        <label>Enter Your Ful Address</label>
+                        <input type="text" name="address" #address="ngModel" [(ngModel)]="user.address"/><br>
+                    <button class="btn btn-primary" type="submit">Submit</button>  
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>  
+</div>
+
+
+
+<div *ngIf="">
+    
+</div>

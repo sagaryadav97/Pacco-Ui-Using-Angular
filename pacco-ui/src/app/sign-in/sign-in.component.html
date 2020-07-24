@@ -1,0 +1,22 @@
+
+
+<div class="col-lg-8 offset-lg-4">
+    <div class="card mb-3" style="max-width: 600px;">
+        <div class="row justify-content-center">
+        <div class="row no-gutters">
+            <h3 class="col-lg-6 offset-lg-3">Pacco  Sign In Page</h3>
+           
+            <br>
+
+            <form class="col-lg-6 offset-lg-3" #userForm="ngForm"  (ngSubmit)="login(userForm)">
+                <label>Enter Your Mail Id</label><br>
+                <input type="text" name="email" #email="ngModel" [(ngModel)] = "user.email"/><br>
+                <label>Enter Your Password</label><br>
+                <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password"/><br>
+                <button class="btn btn-primary" type="submit">Submit</button>  
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+

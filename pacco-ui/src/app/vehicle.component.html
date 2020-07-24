@@ -1,0 +1,92 @@
+<div *ngIf="vehiclestatus">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+            <h3>Select The Vehicle Details</h3>
+                <form #VehicleForm="ngForm" (ngSubmit)="Vehicleadd(VehicleForm)">
+                    <label>Brand:</label>
+                    <select class="browser-default" name="brandtype" #brandtype = "ngModel" [(ngModel)] = "vehicle.brandtype">   
+                        <option>Brand</option>
+                        <option>weapon 2</option>
+                        <option>weapon 3</option>
+                    </select><br>
+                    <label>Model:</label>
+                    <select class="browser-default" name="modeltype" #modeltype = "ngModel" [(ngModel)] = "vehicle.modeltype">
+                        <option>Model</option>
+                        <option>medium</option>
+                        <option>small</option>
+                    </select><br>
+                    <label>Description:</label>
+                    <select class="browser-default" name="description" #description = "ngModel" [(ngModel)] = "vehicle.description">
+                        <option>Vehicle description</option>
+                        <option>Parcel #2</option>
+                        <option>Parcel #3</option>
+                    </select><br>
+                    <label>payloadCapacity:</label>
+                    <select class="browser-default" name="payloadCapacity" #payloadCapacity = "ngModel" [(ngModel)] = "vehicle.payloadCapacity">
+                        <option>1000</option>
+                        <option>My parcel #2</option>
+                        <option>My parcel #3</option>
+                    </select>
+                    <label>loadingCapacity:</label>
+                    <select class="browser-default" name="loadingCapacity" #loadingCapacity = "ngModel" [(ngModel)] = "vehicle.loadingCapacity">
+                        <option>1000</option>
+                        <option>My parcel #2</option>
+                        <option>My parcel #3</option>
+                    </select>
+                    <label>payloadCapacity:</label>
+                    <select class="browser-default" name="pricePerService" #pricePerService = "ngModel" [(ngModel)] = "vehicle.pricePerService">
+                        <option>100</option>
+                        <option>My parcel #2</option>
+                        <option>My parcel #3</option>
+                    </select>
+                    <label>variants:</label>
+                    <select class="browser-default" name="variants" #variants = "ngModel" [(ngModel)] = "vehicle.variants">
+                        <option>1</option>
+                        <option>My parcel #2</option>
+                        <option>My parcel #3</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card text-center">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</div>
+
+<div *ngIf="vehiclestatusget">
+    <div class="card text-center">
+        <h3>Vehicle Created successfully</h3>
+        {{vehicledetials | json}}<br>
+        <h3>Make The vehicle avilable for delivery</h3><br>
+        <button class="btn btn-primary" (click)="vehicleavilable()">click to make vehicle avilable</button>
+    </div>
+</div>
+
+<div *ngIf="vehiclestatusid">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Vehicle Made Avilable</h2>
+                {{vehicledata | json}}
+                <br>
+                <h2>Vehicle resources Avilable</h2>
+                {{vehicledetials | json}}<br>
+            </div>
+        </div>
+    </div>
+    <div class="card text-center">
+        <h3>Assign a vehicle to your order and set the desired delivery date</h3><br>
+        <button class="btn btn-primary" routerlink="/deliverydate">click to Proced</button>
+    </div>
+</div>
+
+
+
+
+
+
+<div *ngIf="">
+
+</div>

@@ -1,0 +1,84 @@
+<div *ngIf="orderstatusget">
+        <div class="col-lg-8 offset-lg-4">
+            <div class="card" style="width: 40rem;">
+                Create Your Order Id
+                <div class="card-header">
+                Parcel Details Details  
+                </div>
+                <div *ngFor="let parcel of orderdetials">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><label>parcels Id:-</label> {{parcel.id}}</li>
+                        <li class="list-group-item"><label>customerId:-</label> {{parcel.customerId}}</li>
+                        <li class="list-group-item"><label>variant:-</label> {{parcel.variant}}</li>
+                        <li class="list-group-item"><label>size:-</label> {{parcel.size}}</li>
+                        <li class="list-group-item"><label>name:-</label> {{parcel.name}}</li>
+                        <li class="list-group-item"><label>description:-</label> {{parcel.description}}</li>
+                        <li class="list-group-item"><label>createdAt:-</label> {{parcel.createdAt}}</li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+        <div class="card text-center">
+            <button class="btn btn-primary" (click)="createorder()">Click to Create Order</button>
+        </div>
+</div>
+
+
+
+<div *ngIf="orderstatus">
+    <div class="col-lg-8 offset-lg-4">
+        <div class="card" style="width: 40rem;">
+            <div class="card-header">
+            Order Details  Are
+            </div>
+            <div *ngFor="let parcel of orderdetials">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><label>parcels Id:-</label> {{parcel.id}}</li>
+                    <li class="list-group-item"><label>customerId:-</label> {{parcel.customerId}}</li>
+                    <li class="list-group-item"><label>status:-</label> {{parcel.status}}</li>
+                    <li class="list-group-item"><label>deliveryDate:-</label> {{parcel.deliveryDate}}</li>
+                    <li class="list-group-item"><label>totalPrice:-</label> {{parcel.totalPrice}}</li>
+                    <li class="list-group-item"><label>parcels:-</label> {{parcel.parcels}}</li>
+                    <li class="list-group-item"><label>createdAt:-</label> {{parcel.createdAt}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card text-center">
+        <h3>Add parcel to the order</h3>
+        <button class="btn btn-primary" (click)="addparcelorder()">Click to add Parcel to your Order</button>
+    </div>
+</div>
+
+
+<div *ngIf="orderstatusid">
+    <div class="col-lg-8 offset-lg-4">
+        <div class="card" style="width: 40rem;">
+            <div class="card-header">
+            Order Details  Are
+            </div>
+            <div *ngFor="let parcel of orderdata">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><label>parcels Id:-</label> {{parcel.id}}</li>
+                    <li class="list-group-item"><label>customerId:-</label> {{parcel.customerId}}</li>
+                    <li class="list-group-item"><label>status:-</label> {{parcel.status}}</li>
+                    <li class="list-group-item"><label>deliveryDate:-</label> {{parcel.deliveryDate}}</li>
+                    <li class="list-group-item"><label>totalPrice:-</label> {{parcel.totalPrice}}</li>
+                    <li class="list-group-item"><label>parcels:-</label> Details</li>
+                        <div *ngFor="let pcls of parcels">
+                            <li class="list-group-item"><label>parcel id:-</label> {{pcls.id}}</li>
+                            <li class="list-group-item"><label>parcel name:-</label> {{pcls.name}}</li>
+                            <li class="list-group-item"><label>parcel variant:-</label> {{pcls.variant}}</li>
+                            <li class="list-group-item"><label>parcel size:-</label> {{pcls.size}}</li>
+                        </div>
+                    <li class="list-group-item"><label>createdAt:-</label> {{parcel.createdAt}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-center">
+        <h3>Create A Vehicle</h3>
+        <button class="btn btn-primary" routerLink='/vehicle'>Click to Create Vehicle</button>
+    </div>
+</div>

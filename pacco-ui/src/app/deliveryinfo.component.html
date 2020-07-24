@@ -1,0 +1,104 @@
+<div *ngIf="infostatus">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Order is Ready for delivery</h2>
+                <label>Enter Delivery description</label>
+                <textarea name="description" #description>
+                    Enter Description Details
+                </textarea>
+                <button class="btn btn-primary" (click)="startdelivery(description.value)">Start delivery</button>        
+            </div>      
+        </div>       
+    </div>
+</div>
+
+<div *ngIf="infostatusget">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Your Order is Confirmed</h2>
+                <h2>Add some internal delivery transportation details</h2>
+                <label>Enter transportation details</label>
+                <textarea name="transportation" #transportation>
+                </textarea>
+                <button class="btn btn-primary" (click)="transportationdetails(transportation.value)">Update transportation Details</button>
+            </div>      
+        </div>       
+    </div> 
+</div>
+
+
+<div *ngIf="infoparceldetialstatus">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Internal delivery transportation details Are Updated</h2>
+                <label></label>{{infodetials | json}}
+                <h2>Now Complete your Order</h2>
+                <button class="btn btn-primary" (click)="Completedelivery()">Complete the delivery</button>            </div>      
+        </div>       
+    </div> 
+</div>
+
+<div *ngIf="infostatusid">
+
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>Order Delivery Is Completed</h2>
+                <h2>Delivery details Are</h2>
+                <div *ngFor="let parcel of infodata">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><label>Id:-</label> {{parcel.id}}</li>
+                        <li class="list-group-item"><label>orderId:-</label> {{parcel.orderId}}</li>
+                        <li class="list-group-item"><label>status:-</label> {{parcel.status}}</li>
+                        <li class="list-group-item"><label>notes:-</label> {{parcel.notes}}</li>
+                        <li class="list-group-item"><label>lastUpdate:-</label> {{parcel.lastUpdate}}</li>
+                        <div class="card-header">
+                            registrations Details
+                        </div>
+                            <div *ngFor="let reg of registrations">
+                            <li class="list-group-item"><label>description:-</label> {{reg.description}}</li>
+                            <li class="list-group-item"><label>dateTime:-</label> {{reg.dateTime}}</li>
+                            <li class="list-group-item"><label>description:-</label> {{reg.description}}</li>
+                            <li class="list-group-item"><label>dateTime:-</label> {{reg.dateTime}}</li>
+                        </div> 
+                    </ul>
+                </div>
+                <h2>Now Get your Order Order Details</h2>
+                <button class="btn btn-primary" (click)="orderdeliveredget()">Get your order Complete Details</button>
+            </div>       
+        </div>
+    </div>
+</div>
+
+<div *ngIf="completdetails">
+    <div class="col-lg-6 offset-lg-2">
+        <div class="card" style="width: 90rem;">
+            <div class="col-lg-6 offset-lg-3">
+                <h2>your order details</h2>
+                <div *ngFor="let parcel of infodetials">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><label>Id:-</label> {{parcel.id}}</li>
+                        <li class="list-group-item"><label>customerId:-</label> {{parcel.customerId}}</li>
+                        <li class="list-group-item"><label>vehicleId:-</label> {{parcel.vehicleId}}</li>
+                        <li class="list-group-item"><label>status:-</label> {{parcel.status}}</li>
+                        <li class="list-group-item"><label>createdAt:-</label> {{parcel.createdAt}}</li>
+                        <li class="list-group-item"><label>deliveryDate:-</label> {{parcel.deliveryDate}}</li>
+                        <li class="list-group-item"><label>totalPrice:-</label> {{parcel.totalPrice}}</li>
+                        <div class="card-header">
+                            parcels Details
+                        </div>
+                            <div *ngFor="let reg of parcels">
+                            <li class="list-group-item"><label>id:-</label> {{reg.id}}</li>
+                            <li class="list-group-item"><label>name:-</label> {{reg.name}}</li>
+                            <li class="list-group-item"><label>variant:-</label> {{reg.variant}}</li>
+                            <li class="list-group-item"><label>size:-</label> {{reg.size}}</li>
+                        </div> 
+                    </ul>
+                </div>
+            </div>       
+        </div>
+    </div>
+</div>
