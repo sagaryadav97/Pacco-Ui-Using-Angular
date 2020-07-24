@@ -1,4 +1,4 @@
-# Pacco-Ui-Using-Angualr
+# Pacco-Ui-Using-Angular
 
 
 To run the project you need to Setup Pacco First.
